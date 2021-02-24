@@ -76,12 +76,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btnAttack:
                 if (turn%2 == 1) {
+                    hero.setVisibility(View.VISIBLE);
                     skeleton.setVisibility(View.VISIBLE);
-                    turn++;
                     monsterHP = Math.max(0, monsterHP - heroDPT);
                     txtCombatLog.setText("Player dealt "+ heroDPT+ " dmg to "+ monsterName);
                     txtMonsterHP.setText(String.valueOf(monsterHP));
                     nextTurn.setText("Enemy's turn\nPress to proceed");
+                    turn++;
                     if (monsterHP == 0) {
                         skeleton.setVisibility(View.INVISIBLE);
                         turn = 1;
@@ -93,11 +94,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else if (turn%2 != 1) {
                     hero.setVisibility(View.VISIBLE);
-                    turn++;
+                    skeleton.setVisibility(View.VISIBLE);
                     heroHP = Math.max(0, heroHP - monsterDPT);
                     txtCombatLog.setText(monsterName+ " dealt "+ monsterDPT+ " dmg to "+ heroName);
                     txtHeroHP.setText(String.valueOf(heroHP));
                     nextTurn.setText("Attack");
+                    turn++;
                     if (heroHP == 0) {
                         hero.setVisibility(View.INVISIBLE);
                         turn = 1;
