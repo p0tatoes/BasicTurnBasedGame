@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#434343"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/heroTxt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="352dp"
+        android:text="Hero"
+        android:textColor="#dcdcdc"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtHeroHP"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="HP"
+        android:textColor="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="@+id/heroTxt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/heroTxt"
+        app:layout_constraintTop_toBottomOf="@+id/heroTxt" />
+
+    <TextView
+        android:id="@+id/txtHeroDmg"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="DPT"
+        android:textColor="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="@+id/txtHeroHP"
+        app:layout_constraintStart_toStartOf="@+id/txtHeroHP"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeroHP" />
+
+    <TextView
+        android:id="@+id/monsterTxt"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:text="Skeleton King"
+        android:textColor="#dcdcdc"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtMonstrHP"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:text="HP"
+        android:textColor="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="@+id/monsterTxt"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/monsterTxt"
+        app:layout_constraintTop_toBottomOf="@+id/monsterTxt" />
+
+    <TextView
+        android:id="@+id/txtMonstrDmg"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="right"
+        android:text="DPT"
+        android:textColor="#dcdcdc"
+        app:layout_constraintEnd_toEndOf="@+id/txtMonstrHP"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/txtMonstrHP"
+        app:layout_constraintTop_toBottomOf="@+id/txtMonstrHP" />
+
+    <Button
+        android:id="@+id/btnAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="Attack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtCombatLog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#dcdcdc"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnAttack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
