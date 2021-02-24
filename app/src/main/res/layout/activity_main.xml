@@ -7,18 +7,37 @@
     android:background="#434343"
     tools:context=".MainActivity">
 
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/skeleton"
+        android:layout_width="190dp"
+        android:layout_height="225dp"
+        android:src="@drawable/bone_lauron"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/hero"
+        android:layout_width="156dp"
+        android:layout_height="169dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="216dp"
+        android:src="@drawable/knight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/heroTxt"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="352dp"
-        android:text="Hero"
+        android:layout_width="239dp"
+        android:layout_height="21dp"
+        android:layout_marginBottom="212dp"
+        android:text='Sir Marvinius "First of His Name"'
         android:textColor="#dcdcdc"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -46,28 +65,24 @@
 
     <TextView
         android:id="@+id/monsterTxt"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:text="Skeleton King"
+        android:layout_width="193dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="204dp"
+        android:text='Khaxhe "King of all Kings"'
         android:textColor="#dcdcdc"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.807"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtMonstrHP"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_width="123dp"
+        android:layout_height="24dp"
         android:layout_marginTop="20dp"
-        android:gravity="right"
+        android:gravity="left"
         android:text="HP"
         android:textColor="#dcdcdc"
-        app:layout_constraintEnd_toEndOf="@+id/monsterTxt"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/monsterTxt"
         app:layout_constraintTop_toBottomOf="@+id/monsterTxt" />
 
@@ -76,11 +91,9 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:gravity="right"
+        android:gravity="left"
         android:text="DPT"
         android:textColor="#dcdcdc"
-        app:layout_constraintEnd_toEndOf="@+id/txtMonstrHP"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/txtMonstrHP"
         app:layout_constraintTop_toBottomOf="@+id/txtMonstrHP" />
 
@@ -88,7 +101,8 @@
         android:id="@+id/btnAttack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#9A3030"
         android:text="Attack"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +112,7 @@
         android:id="@+id/txtCombatLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text=""
         android:textColor="#dcdcdc"

@@ -2,6 +2,7 @@ package com.example.basicturnbasedgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,16 +10,18 @@ import android.widget.TextView;
 
 import java.util.Random;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     //Hero stats
-    String heroName = "Bruddah";
+    String heroName = "Sir Marvinius \"First of His Name\"";
     int heroMinDPT = 60;
     int heroMaxDPT = 95;
     int heroHP = 1000;
 
     //Monster stats
-    String monsterName = "Skeleton King";
+    String monsterName = "Khaxhe \"King of all Kings\"";
     int monsterMinDPT = 30;
     int monsterMaxDPT = 130;
     int monsterHP = 950;
@@ -49,6 +52,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtHeroHP.setText(String.valueOf(heroHP));
         txtHeroDPT.setText("Dmg per turn: "+ heroMinDPT+ " - "+ heroMaxDPT);
 
+
+
         txtMonsterName.setText(monsterName);
         txtMonsterHP.setText(String.valueOf(monsterHP));
         txtMonsterDPT.setText("Dmg per turn "+ monsterMinDPT+ " - "+ monsterMaxDPT);
@@ -60,9 +65,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Random rand = new Random();
         int heroDPT = rand.nextInt(heroMaxDPT - heroMinDPT) + heroMinDPT;
         int monsterDPT = rand.nextInt(monsterMaxDPT - monsterMinDPT) + monsterMinDPT;
+        GifImageView skeleton = findViewById(R.id.skeleton);
+        GifImageView hero = findViewById(R.id.hero);
 
         txtHeroHP.setText(String.valueOf(heroHP));
         txtMonsterHP.setText(String.valueOf(monsterHP));
+
+
 
         switch (v.getId()) {
             case R.id.btnAttack:
