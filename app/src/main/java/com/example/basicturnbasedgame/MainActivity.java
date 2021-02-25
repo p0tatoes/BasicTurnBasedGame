@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         heroHP = 1000;
                         monsterHP = 950;
                         txtCombatLog.setText(monsterName+ " dealt "+ monsterDPT+ " dmg to "+ heroName+ ". You have been vanquished.");
-                        nextTurn.setText("Next");
+                        nextTurn.setText("Reset");
                     }
                 }
                 break;
