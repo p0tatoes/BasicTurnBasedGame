@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //Declarations
     TextView txtHeroName, txtHeroHP, txtHeroDPT, txtMonsterName, txtMonsterHP, txtMonsterDPT, txtCombatLog;
     Button nextTurn;
+    GifImageView skeleton, hero;
     int turn = 1;
 
     @Override
@@ -52,11 +53,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         txtHeroHP.setText(String.valueOf(heroHP));
         txtHeroDPT.setText("Dmg per turn: "+ heroMinDPT+ " - "+ heroMaxDPT);
 
-
-
         txtMonsterName.setText(monsterName);
         txtMonsterHP.setText(String.valueOf(monsterHP));
         txtMonsterDPT.setText("Dmg per turn "+ monsterMinDPT+ " - "+ monsterMaxDPT);
+
+        skeleton = findViewById(R.id.skeleton);
+        hero = findViewById(R.id.hero);
     }
 
     @Override
@@ -65,8 +67,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Random rand = new Random();
         int heroDPT = rand.nextInt(heroMaxDPT - heroMinDPT) + heroMinDPT;
         int monsterDPT = rand.nextInt(monsterMaxDPT - monsterMinDPT) + monsterMinDPT;
-        GifImageView skeleton = findViewById(R.id.skeleton);
-        GifImageView hero = findViewById(R.id.hero);
 
         txtHeroHP.setText(String.valueOf(heroHP));
         txtMonsterHP.setText(String.valueOf(monsterHP));
@@ -76,12 +76,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btnAttack:
                 if (turn%2 == 1) {
-                    turn++;
+                    hero.setVisibility(View.VISIBLE);
+                    skeleton.setVisibility(View.VISIBLE);
                     monsterHP = Math.max(0, monsterHP - heroDPT);
                     txtCombatLog.setText("Player dealt "+ heroDPT+ " dmg to "+ monsterName);
                     txtMonsterHP.setText(String.valueOf(monsterHP));
                     nextTurn.setText("Enemy's turn\nPress to proceed");
+                    turn++;
                     if (monsterHP == 0) {
+                        skeleton.setVisibility(View.INVISIBLE);
                         turn = 1;
                         heroHP = 1000;
                         monsterHP = 950;
@@ -90,12 +93,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     }
                 }
                 else if (turn%2 != 1) {
-                    turn++;
+                    hero.setVisibility(View.VISIBLE);
+                    skeleton.setVisibility(View.VISIBLE);
                     heroHP = Math.max(0, heroHP - monsterDPT);
                     txtCombatLog.setText(monsterName+ " dealt "+ monsterDPT+ " dmg to "+ heroName);
                     txtHeroHP.setText(String.valueOf(heroHP));
                     nextTurn.setText("Attack");
+                    turn++;
                     if (heroHP == 0) {
+                        hero.setVisibility(View.INVISIBLE);
                         turn = 1;
                         heroHP = 1000;
                         monsterHP = 950;
